@@ -1,0 +1,618 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+:root{
+    --orange:rgb(244, 171, 25);
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(180, 178, 178);
+    width: 100%;
+}
+
+#side-bar{
+    position: absolute;
+    width: 230px;
+    height: 100%;
+    left: -230px;
+    z-index: 4;
+    background-color: rgba(22, 22, 22, 0.532);
+    top: 0;
+    transition: 0.5s ease-out;
+}
+
+.toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 240px;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    width: 60px;
+    height: 10px;
+    border-radius: 5px;
+    background: rgb(137, 198, 178);
+    display: block;
+    margin-top: 4px;
+    transition: 0.3s ease;
+  }
+
+  li {
+    font-size: 2.5rem;
+    padding: 10px;
+    color: rgb(137, 198, 178);
+    cursor: pointer;
+  }
+
+  li:hover{
+    background-color:rgb(137, 198, 178);
+    color: rgb(22, 22, 22) ;
+  }
+
+#side-bar.active {
+    left: 0;
+}
+
+.active span {
+    position: absolute;
+}
+
+.active span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  
+  
+  .active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  
+  .active span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+  .active ~ .content {
+    opacity: 0.3;
+  }
+
+.active ~ header {
+    opacity: 0.95;
+}
+
+/* --------------------- Header -----------------*/
+
+header{
+    background:linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0,0.75)), url(./image/bureau.jpg) center/cover;
+    height: 100vh;
+    text-align: center;
+}
+
+header .head{
+    padding: 110px;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+header .head .lineone{
+    animation: slideInLeft 1s ease-in;
+    display: inline-block;
+}
+
+header .head .linetwoo{
+    animation: slideInLeft 1s ease-in;
+    display: inline-block;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform:translateX(-300px)
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+header .head .linetwoo{
+    animation: slideInRight 1s ease-in;
+    display: inline-block;
+}
+
+@keyframes slideInRight {
+    from {
+        transform:translateX(300px)
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+header .card-header{
+    display: flex;
+    justify-content: center;
+    margin: 0 40px;
+    padding: 10px;
+    color: rgb(180, 178, 178)
+}
+
+header .card-header .cards{
+    padding: 0 20px;
+    margin-bottom: 60px;
+}
+
+header .card-header .cards .icon{
+    padding-top: 10px;
+}
+
+header .card-header .cards .icon i{
+    font-size: 25px;
+    border-radius: 50px;
+    padding: 15px;
+    margin-bottom: 20px;
+    color: rgb(209, 207, 207);
+}
+
+header .card-header .cards .icon i.fa-people-group{
+    background-color: var(--orange);
+}
+
+header .card-header .cards .icon i.fa-briefcase{
+    background-color:rgb(72, 182, 229);
+}
+
+header .card-header .cards .icon i.fa-users-rays{
+    background-color: rgb(45, 204, 151);
+}
+
+header .card-header .cards h5{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+header .card-header .cards p{
+    width: 330px;
+    font-size: 0.9rem;
+}
+
+/* -------------------------- Section 1 ------------------------------ */
+
+section.first{
+    background:linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0,0.75)), url(./image/office.jpg) center/cover;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+section.first .online-support{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+
+section.first .online-support .logo{
+    background-color: var(--orange);
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.first .online-support .logo img{
+    border: 2px solid rgba(122, 119, 119, 0.512);
+    height: 80px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+section.first .online-support .side{
+    background-color:#2b2b34;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+section.first .online-support .side h2{
+    color: #e6e2e2;
+    font-size: 3.2rem;
+    font-weight:lighter;
+    flex-wrap: wrap;
+    padding: 30px 0 50px 0;
+    position: relative;
+    
+}
+
+section.first .online-support .side h2::after{
+    content: "";
+    position: absolute;
+    background-color:var(--orange);
+    width: 80%;
+    height: 3px;
+    top:15px;
+    left:0;
+}
+
+section.first .online-support .side .side-rigth{
+    display: flex;
+    flex-direction: column;
+}
+
+.side-right p.paragraphe{
+    width: 60%;
+    line-height: 20px;
+    font-size: 0.9rem;
+    padding-top: 20px;
+}
+
+.side-right p.from{
+    margin-top: 30px;
+}
+
+.side-right p.from span{
+    border-bottom: 1px solid var(--orange);
+    padding-bottom: 5px;
+}
+
+.div-bottom .container-bottom{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35%;
+    padding: 80px 50px 80px 50px;
+}
+
+.div-bottom h1.number{
+    font-size: 13vh;
+    color: rgb(255, 255, 255);
+}
+
+.div-bottom .set{
+    width: 100%;
+    padding-left: 60px;
+}
+
+.div-bottom .set p.second{
+    line-height: 25px;
+    color: #d1cfcf;
+}
+
+.div-bottom .set button.learn{
+    margin-top: 40px;
+    /* padding: 10px 25px; */
+    color: #d1cfcf;
+    border: 2px solid #d1cfcf;
+    background-color: transparent;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    height: 60px;
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+}
+
+.div-bottom .set button.learn:hover{
+    color: #2b2b34;
+    border: 2px solid #2b2b34;
+}
+
+.div-bottom .set button.learn::before{
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--orange);
+    border-radius: 50% 50% 0 0;
+    transition: all .7s;
+    z-index: -1;
+}
+
+.div-bottom .set button.learn:hover::before{
+    top: 0;
+    border-radius: 0;
+}
+
+/* ------------------------------- Section 2 ---------------------------------- */
+
+section.twoo{
+    background-color:#2b2b34;
+}
+
+section.twoo .banner-card{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+section.twoo .one-card{
+    display: flex;
+    width: 400px;
+}
+
+section.twoo .banner-card .one-card .icon-card{
+    margin-right: 30px;
+    
+}
+
+section.twoo .banner-card .one-card .icon-card i{
+    font-size: 20px;
+    padding: 15px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    color: rgb(209, 207, 207)
+}
+
+section.twoo .banner-card .one-card .card-text{
+    max-width: 300px;
+    margin-bottom: 50px;
+    line-height: 20px;
+    padding-right: 20px;
+}
+
+section.twoo .banner-card .one-card .card-text h6{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+section.twoo .banner-card .one-card .card-text p{
+    font-size: 0.9rem;
+}
+
+/* -------Section Partie reverse------- */
+
+section.next{
+    background:linear-gradient(rgba(71, 76, 105, 0.614),rgba(0,0,0,0.75)), url(./image/teamwork.jpg) center/cover;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+section.next .online-support {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-left: 10%;
+}
+
+section.next .online-support .logo{
+    background-color:rgb(72, 182, 229);
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.next .side h2.afterblue::after{
+    content: "";
+    position: absolute;
+    background-color:rgb(72, 182, 229);
+    width: 80%;
+    height: 3px;
+    top:15px;
+    left:0;
+}
+
+section.next span.blue{
+    border-bottom: 1px solid rgb(72, 182, 229);
+    padding-bottom: 5px;
+}
+
+section.next .div-bottom{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-right: 35%;
+    padding: 80px 50px 80px 50px;
+}
+
+section.next .div-bottom .set{
+    width: 100%;
+    padding-right: 60px;
+}
+
+section.next .div-bottom .set button.learn-2::before{
+    background: rgb(72, 182, 229);
+}
+
+
+/* Div container social business */
+
+section.business{
+    background-color:rgb(16, 14, 14);
+    display: flex;
+    min-height: 65vh;
+    padding: 40px 0 40px 40px;
+}
+
+section.business .container-left{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 50%;
+}
+
+section.business .container-left img{
+    height: 250px;
+    width: 100%;
+}
+
+section.business .container-left .social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.business .container-left .social-media p{
+    margin-left: 30px;
+    font-size: 1.7rem;
+    color: rgb(40, 183, 212);
+}
+
+section.business .container-right{
+   display: flex;
+   align-items: center;
+   width: 20%;
+}
+
+section.business .container-right h1.media{
+    font-size: 3.5rem;
+    padding-left: 25px;
+    color: #fff;
+}
+
+section.business .container-right h1.media span.title{
+    color: rgb(40, 183, 212);
+    font-weight: 100;
+}
+
+/* ------------------------------- Section Three  --------------------------------*/
+
+
+section.three{
+    background:linear-gradient(rgba(0, 0, 0, 0.26),rgba(0,0,0,0.75)), url(./image/workin.jpg) center/cover;
+}
+
+section.three .online-support .logo{
+    background-color: rgb(45, 204, 151);
+}
+
+section.three .side h2.aftergreen::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(45, 204, 151);
+    width: 80%;
+    height: 3px;
+    top:15px;
+    left:0;
+}
+
+section.three p.from span.green{
+    border-bottom: 2px solid rgb(45, 204, 151);
+    padding-bottom: 5px;
+}
+
+section.three .set button.learn-3::before{
+    background: rgb(45, 204, 151);
+}
+/* --------------------- Footer -------------------------- */
+
+footer{
+    background-color:rgb(16, 14, 14);
+    padding: 60px 0 60px 60px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+footer .formulaire{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 20% 60%;
+    gap: 7px;
+    width: 80%;
+    grid-template-areas:
+    "in in"
+    "in in"
+    "ar ar";
+}
+
+footer .formulaire input[type]{
+    background-color: #3a3a3ae6;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color:rgb(45, 204, 151);
+}
+
+
+footer .formulaire textarea{
+    resize: none;
+    background-color: #3a3a3ae6;
+    padding: 6px;
+    border: none;
+    outline: none;
+    grid-area: ar;
+    border-radius: 5px;
+    color:rgb(45, 204, 151);
+}
+
+footer .submit-media{
+    margin: 30px 0;
+}
+
+footer .submit-media input[type="submit"]{
+    background: rgb(45, 204, 151);
+    padding: 9px 25px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid  rgb(45, 204, 151);
+    font-size: 1.1rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer .submit-media input[type="submit"]:hover{
+    background: transparent;
+    border: 1px solid  rgb(45, 204, 151);
+    transition: 0.4s;
+}
+
+footer .div-media{
+    margin-top: 50px;
+}
+
+footer .div-media a{
+    padding-right: 15px;
+    color: #fff;
+}
+
+footer .footer-right{
+margin-right: 200px;
+}
+
+footer .footer-right p.titre{
+    margin-bottom: 20px;
+}
+
+footer .footer-right h1.contact{
+    color:  rgb(45, 204, 151);
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+footer .footer-right p.middle{
+    margin-bottom: 25px;
+    line-height: 25px;
+}
+
+footer .footer-right p.end{
+    line-height: 25px;
+}
+
+
+
